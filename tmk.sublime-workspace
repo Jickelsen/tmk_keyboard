@@ -1,0 +1,1427 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"zoom",
+				"hasZoomed"
+			],
+			[
+				"Dark",
+				"DarkLevel"
+			],
+			[
+				"_color",
+				"_colorLerp"
+			],
+			[
+				"is",
+				"isDark"
+			],
+			[
+				"webCamMaterial",
+				"webCamMaterialL"
+			],
+			[
+				"game",
+				"GameObject"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "keyboard/hhkb/matrix.c",
+			"settings":
+			{
+				"buffer_size": 10536,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "keyboard/hhkb/keymap_hasu.c",
+			"settings":
+			{
+				"buffer_size": 12300,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "keyboard/hhkb/keymap_jickel.c",
+			"settings":
+			{
+				"buffer_size": 11445,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 858 files for \"volu\"\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/README.md:\n   13  * Mouse key           - Mouse control with keyboard\n   14  * System Control Key  - Power Down, Sleep, Wake Up and USB Remote Wake up\n   15: * Media Control Key   - Volume Down/Up, Mute, Next/Prev track, Play, Stop and etc\n   16  * USB NKRO            - 120 keys(+ 8 modifiers) simultaneously\n   17  * PS/2 mouse support  - PS/2 mouse(TrackPoint) as composite device\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/common/keycode.h:\n  137  /* Consumer Page */\n  138  #define KC_MUTE KC_AUDIO_MUTE\n  139: #define KC_VOLU KC_AUDIO_VOL_UP\n  140  #define KC_VOLD KC_AUDIO_VOL_DOWN\n  141  #define KC_MNXT KC_MEDIA_NEXT_TRACK\n  ...\n  291      KC_FIND,\n  292      KC__MUTE,\n  293:     KC__VOLUP,          /* 0x80 */\n  294      KC__VOLDOWN,\n  295      KC_LOCKING_CAPS,    /* locking Caps Lock */\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/adb_usb/matrix.c:\n   89  uint8_t matrix_scan(void)\n   90  {\n   91:     /* extra_key is volatile and more convoluted than necessary because gcc refused\n   92      to generate valid code otherwise. Making extra_key uint8_t and constructing codes\n   93      here via codes = extra_key<<8 | 0xFF; would consistently fail to even LOAD\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/ibm4704_usb/keymap_hasu.c:\n   27      ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n   28      CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP, NO,  BSPC, \\\n   29:     LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,NO,  ENT, \\\n   30      LSFT,NO,  NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,NO,  TRNS, \\\n   31      LCTL,LGUI,LALT,          SPC,                               RGUI,RCTL \\\n   ..\n   51      ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n   52      TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,BTN4,BTN5,FN4, \\\n   53:     LCTL,VOLD,VOLU,MUTE,NO,  NO,  BTN2,MS_L,MS_D,MS_R,BTN1,NO,  NO,  ENT, \\\n   54      LSFT,NO,  NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,NO,  NO,  NO, \\\n   55      LCTL,LGUI,LALT,          TRNS,                              RGUI,RCTL \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/ibm4704_usb/keymap_plain.c:\n   28      ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n   29      CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP, NO,  INS, \\\n   30:     LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,NO,  ENT, \\\n   31      LSFT,NO,  NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,NO,  TRNS, \\\n   32      LCTL,LGUI,LALT,          SPC,                               RGUI,RCTL \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/m0110_usb/keymap_hasu.c:\n  163      GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,     NLCK,EQL, PSLS,PAST,\n  164      CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,UP,  NO,           P7,  P8,  P9,  PMNS,\n  165:     LCTL,VOLD,VOLU,MUTE,NO,  NO,  NO,  NO,  HOME,PGUP,LEFT,RGHT,     FN0,     P4,  P5,  P6,  PPLS,\n  166      LSFT,NO,  NO,  NO,  NO,  NO,  NO,  NO,  END, PGDN,DOWN,          FN3,     P1,  P2,  P3,  PENT,\n  167      LCTL,LALT,               SPC,                LGUI,INS, LGUI,RCTL,RCTL,    P0,       PDOT\n  ...\n  171      GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,     NLCK,EQL, PSLS,PAST,\n  172      CAPS,NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,PSCR,SLCK,PAUS,         P7,  P8,  P9,  PMNS,\n  173:     LCTL,VOLD,VOLU,MUTE,NO,  NO,  MS_L,MS_D,MS_U,MS_R,FN1, NO,       ENT,     P4,  P5,  P6,  PPLS,\n  174      LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,NO,  NO,  NO,            NO,      P1,  P2,  P3,  PENT,\n  175      FN4, LALT,               BTN1,               LGUI,NO,  LGUI,RCTL,RCTL,    P0,       PDOT\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/next_usb/keymap.c:\n  156      KEYMAP(\n  157      \n  158:     GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, TRNS,  VOLU,MUTE,PGUP,  TRNS,TRNS,TRNS,TRNS,\n  159      TRNS,PAUS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,FN3, BSLS,TRNS,  VOLD,     PGDN,  BTN1,MS_U,BTN2,WH_U,\n  160      TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                   MS_L,MS_D,MS_R,WH_D,\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/ps2_usb/keymap_common.h:\n   48      K08, K10, K18, K20, K28, K30, K38, K40, K48, K50, K57, K5F, /* F13-24 */                \\\n   49      KB7, KBF, KDE,           /* System Power, Sleep, Wake */                                \\\n   50:     KA3, KB2, KA1,           /* Mute, Volume Up, Volume Down */                             \\\n   51      KCD, K95, KBB, KB4, KD0, /* Next, Previous, Stop, Pause, Media Select */                \\\n   52      KC8, KAB, KC0,           /* Mail, Calculator, My Computer */                            \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/sun_usb/keymap.c:\n   78      K77,K13, K78,             K79,      K7A,K43,K62,K18,K1B,K1C  \\\n   79  ) KEYMAP( \\\n   80:          HELP,           K05,K06,K08,K0A,    K0C,K0E,K10,K11,    K12,K07,K09,K0B,  PSCR,SLCK,PAUS,  MUTE,VOLD,VOLU,K30,  \\\n   81      K01,    AGAIN,   K1D,K1E,K1F,K20,K21,K22,K23,K24,K25,K26,K27,K28,K29,K58,K2A,  K2C, K34, K60,   K62, PSLS,PAST,PMNS, \\\n   82      MENU,   UNDO,    K35, K36,K37,K38,K39,K3A,K3B,K3C,K3D,K3E,K3F,K40,K41,   K2B,  K42, K4A, K7B,   P7,  P8, P9,  PPLS,  \\\n   ..\n  116  /*\n  117      KEYMAP(\n  118:          HELP,       F1, F2, F3, F4,         F5, F6, F7, F8,         F9, F10,F11,F12,   PSCR,SLCK,PAUS,  MUTE,VOLD,VOLU,PWR,\n  119      STOP,   AGAIN,   ESC,1,  2,  3,  4,  5,  6,  7,  8,  9,  0,   MINS,EQL, BSLS,GRV,   INS, HOME,PGUP,  NLCK,PSLS,PAST,PMNS,\n  120      MENU,   UNDO,    TAB, Q,  W,  E,  R,  T,  Y,  U,  I,  O,  P,   LBRC,RBRC,    BSPC,  DEL, END, PGDN,  P7,  P8, P9,  PPLS,\n  ...\n  150          GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,\n  151          CAPS, NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,UP,  NO,      BSPC,\n  152:         LCTL,  VOLD,VOLU,MUTE,NO,  NO,  NO,  NO,  HOME,PGUP,LEFT,RGHT,        ENT,\n  153          LSFT,   Z,   X,   C,   V,   B,   NO,  NO,  END, PGDN,DOWN,  RSFT,PGUP,FN0,\n  154          CAPS,LALT,LGUI,            SPC,              RGUI,RALT,FN0, HOME,PGDN,END\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/terminal_bluefruit/keymap.c:\n  130      KEYMAP(\n  131                       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\n  132:                      TRNS,MUTE,VOLD,VOLU,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,\n  133  \n  134      TRNS,TRNS,  TRNS,F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   TRNS,TRNS,TRNS,  TRNS,TRNS,TRNS,TRNS,\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/usb_usb/keymap.c:\n  200       * `-----------------------------------------------------------'\n  201       * Mc = mouse cursor, Mw = mouse wheel, Mb = mouse button\n  202:      * Vo = Volume, Mut = Mute\n  203       */\n  204      KEYMAP(\n  ...\n  206      GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F8,  F10, F11, F12, DEL,      INS, HOME,PGUP,    NLCK,PSLS,PAST,PMNS,\n  207      CAPS,NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,PSCR,SLCK,PAUS,INS,      DEL, END, PGDN,    P7,  P8,  P9,\n  208:     FN2, VOLD,VOLU,MUTE,NO,  NO,  MS_L,MS_D,MS_U,MS_R,FN0, NO,       ENT,                         P4,  P5,  P6,  PPLS,\n  209      LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,NO,  NO,  NO,            RSFT,          UP,           P1,  P2,  P3,\n  210      LCTL,LGUI,LALT,          BTN1,                    RALT,FN2, FN2, RCTL,     LEFT,DOWN,RGHT,    P0,       PDOT,PENT\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/doc/COPYING.GPLv2:\n  128  \n  129  In addition, mere aggregation of another work not based on the Program\n  130: with the Program (or with a work based on the Program) on a volume of\n  131  a storage or distribution medium does not bring the other work under\n  132  the scope of this License.\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/doc/COPYING.GPLv3:\n  236  works, which are not by their nature extensions of the covered work,\n  237  and which are not combined with it such as to form a larger program,\n  238: in or on a volume of a storage or distribution medium, is called an\n  239  \"aggregate\" if the compilation and its resulting copyright are not\n  240  used to limit the access or legal rights of the compilation's users\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/doc/keycode.txt:\n  137  KC_FIND                             7E Keyboard Find\n  138  KC__MUTE                            7F Keyboard Mute\n  139: KC__VOLUP                           80 Keyboard Volume Up\n  140: KC__VOLDOWN                         81 Keyboard Volume Down\n  141  KC_LOCKING_CAPS                     82 Keyboard Locking Caps Lock12\n  142  KC_LOCKING_NUM                      83 Keyboard Locking Num Lock12\n  ...\n  193  /* Consumer Page */\n  194  KC_AUDIO_MUTE       KC_MUTE\n  195: KC_AUDIO_VOL_UP     KC_VOLU\n  196  KC_AUDIO_VOL_DOWN   KC_VOLD\n  197  KC_MEDIA_NEXT_TRACK KC_MNXT\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/doc/keymap.md:\n  122          KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n  123                 CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,UP,  TRNS,BSPC, \\\n  124:                LCTL,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \\\n  125                 LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \\\n  126                      LGUI,LALT,          SPC,                RALT,RGUI),\n  ...\n  187  ### 1.4 System & Media key\n  188  - `KC_PWR`, `KC_SLEP`, `KC_WAKE` for Power, Sleep, Wake\n  189: - `KC_MUTE`, `KC_VOLU`, `KC_VOLD` for audio volume control\n  190  - `KC_MNXT`, `KC_MPRV`, `KC_MSTP`, `KC_MPLY`, `KC_MSEL` for media control\n  191  - `KC_MAIL`, `KC_CALC`, `KC_MYCM` for application launch\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/gh60/keymap_hasu.c:\n   62          GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,  \\\n   63          CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,UP,  TRNS,INS,  \\\n   64:         LCTL,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,     ENT,  \\\n   65          LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,          RSFT, \\\n   66          LCTL,LGUI,LALT,          SPC,                     RALT,RGUI,FN4, TRNS),\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/gh60/keymap_hhkb.c:\n   40          PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,  \\\n   41          CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,UP,  TRNS,TRNS,      \\\n   42:         TRNS,VOLD,VOLU,MUTE,EJCT,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,     PENT,      \\\n   43          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,     TRNS,TRNS,      \\\n   44          TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/gh60/keymap_poker.c:\n   65          TRNS,FN2, UP,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,CALC,TRNS,HOME,INS, FN4,  \\\n   66          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,FN3, END,      TRNS, \\\n   67:         TRNS,DEL, TRNS,WHOM,MUTE,VOLU,VOLD,TRNS,PGUP,PGDN,DEL,           TRNS, \\\n   68          TRNS,TRNS,TRNS,          FN1,                     TRNS,TRNS,TRNS,TRNS),\n   69      /* 7: Layout selector\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/gh60/keymap_poker_bit.c:\n   17          CAPS,FN2, UP,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,CALC,TRNS,HOME,INS, TRNS, \\\n   18          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,FN4, END,      TRNS, \\\n   19:         TRNS,DEL, TRNS,WHOM,MUTE,VOLU,VOLD,TRNS,PGUP,PGDN,DEL,           TRNS, \\\n   20          TRNS,TRNS,TRNS,          FN1,                     TRNS,TRNS,TRNS,TRNS),\n   21      /* 5: Poker with Arrow */\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/gh60/keymap_poker_set.c:\n   38          TRNS,FN6, UP,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,CALC,TRNS,HOME,INS, TRNS, \\\n   39          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,FN8, END,      TRNS, \\\n   40:         TRNS,DEL, TRNS,WHOM,MUTE,VOLU,VOLD,TRNS,PGUP,PGDN,DEL,           TRNS, \\\n   41          TRNS,TRNS,TRNS,          FN5,                     FN4, TRNS,TRNS,TRNS),\n   42      /* 5: Poker Fn'd arrow */\n   ..\n   45          TRNS,FN7, UP,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,CALC,TRNS,HOME,INS, TRNS, \\\n   46          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,FN8, END,      TRNS, \\\n   47:         TRNS,DEL, TRNS,WHOM,MUTE,VOLU,VOLD,TRNS,PGUP,PGDN,DEL,           PGUP, \\\n   48          TRNS,TRNS,TRNS,          FN4,                     FN5, HOME,PGDN,END),\n   49      /* 6: Poker Fn'd Esc */\n   ..\n   52          TRNS,FN4, UP,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,CALC,TRNS,HOME,INS, TRNS, \\\n   53          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,FN8, END,      TRNS, \\\n   54:         TRNS,DEL, TRNS,WHOM,MUTE,VOLU,VOLD,TRNS,PGUP,PGDN,DEL,           TRNS, \\\n   55          TRNS,TRNS,TRNS,          FN7,                     FN6, TRNS,TRNS,TRNS),\n   56      /* 7: Poker Fn'd Arrow + Esc */\n   ..\n   59          TRNS,FN5, UP,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,CALC,TRNS,HOME,INS, TRNS, \\\n   60          TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PSCR,SLCK,PAUS,TRNS,FN8, END,      TRNS, \\\n   61:         TRNS,DEL, TRNS,WHOM,MUTE,VOLU,VOLD,TRNS,PGUP,PGDN,DEL,           PGUP, \\\n   62          TRNS,TRNS,TRNS,          FN6,                     FN7, HOME,PGDN,END),\n   63  };\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hbkb/keymap.c:\n  147      KEYMAP(ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n  148             CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,BRK, UP,  NO,  NO, \\\n  149:            LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,NO, \\\n  150             LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,FN1, \\\n  151             LGUI,     LALT,          SPC,           RALT,     FN1),\n\n~/Documents/Arduino/tmk_keyboard/keyboard/hhkb/hhkb_lufa.elf:\n    <binary>\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/hhkb_lufa.lss:\n 1633      1188:	08 95       	ret\n 1634                      MACRO_NONE );\n 1635:         case VOLUP:\n 1636              return (event.pressed ?\n 1637:                     MACRO( D(VOLU), U(VOLU), END ) :\n 1638      118a:	22 23       	and	r18, r18\n 1639      118c:	49 f0       	breq	.+18     	; 0x11a0 <action_get_macro+0x76>\n ....\n 1668      11a2:	90 e0       	ldi	r25, 0x00	; 0\n 1669              return (event.pressed ?\n 1670:                     MACRO( D(VOLU), U(VOLU), END ) :\n 1671                      MACRO_NONE );\n 1672      }\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/keymap_hasu.c:\n   44      KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n   45             CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP,  NO,  BSPC, \\\n   46:            LCTL,VOLD,VOLU,MUTE,NO,  FN9, PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \\\n   47             LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \\\n   48                  LGUI,LALT,          SPC,                RALT,RGUI),\n   ..\n  139      RSHIFT_PAREN,\n  140      HELLO,\n  141:     VOLUP,\n  142  };\n  143  \n  ...\n  169  //  [14] = ACTION_MACRO_TAP(RSHIFT_PAREN),             // Macro: RShift with tap ')'\n  170  //  [15] = ACTION_MACRO(HELLO),                        // Macro: say hello\n  171: //  [9] = ACTION_MACRO(VOLUP),                         // Macro: media key\n  172  };\n  173  \n  ...\n  202                      MACRO( I(0), T(H), T(E), T(L), T(L), W(255), T(O), END ) :\n  203                      MACRO_NONE );\n  204:         case VOLUP:\n  205              return (event.pressed ?\n  206:                     MACRO( D(VOLU), U(VOLU), END ) :\n  207                      MACRO_NONE );\n  208      }\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/keymap_hhkb.c:\n   44      KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \\\n   45             CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS, UP, TRNS, BSPC,      \\\n   46:            TRNS,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,PENT,            \\\n   47             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,TRNS,TRNS,            \\\n   48                  TRNS,TRNS,          TRNS,               TRNS,TRNS),\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/keymap_jickel.c:\n   43      KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n   44             CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP,  NO,  BSPC, \\\n   45:            LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \\\n   46             LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \\\n   47                  LALT,LGUI,          SPC,                RGUI,RALT),\n   ..\n  118      RSHIFT_PAREN,\n  119      HELLO,\n  120:     VOLUP,\n  121  };\n  122  \n  ...\n  149  //  [14] = ACTION_MACRO_TAP(RSHIFT_PAREN),                          // Macro: RShift with tap ')'\n  150  //  [15] = ACTION_MACRO(HELLO),                                     // Macro: say hello\n  151: //  [9] = ACTION_MACRO(VOLUP),                                      // Macro: media key\n  152  };\n  153  \n  ...\n  182                      MACRO( I(0), T(H), T(E), T(L), T(L), W(255), T(O), END ) :\n  183                      MACRO_NONE );\n  184:         case VOLUP:\n  185              return (event.pressed ?\n  186:                     MACRO( D(VOLU), U(VOLU), END ) :\n  187                      MACRO_NONE );\n  188      }\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/keymap_spacefn.c:\n   41      KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \\\n   42             CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS, UP, TRNS, BSPC,      \\\n   43:            TRNS,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,PENT,            \\\n   44             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,TRNS,TRNS,            \\\n   45                  TRNS,TRNS,          SPC,                TRNS,TRNS),\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/obj_hhkb_lufa/keymap_jickel.lst:\n   57    43:keymap_jickel.c ****     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \\\n   58    44:keymap_jickel.c ****            CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP,  NO,  BSPC, \\\n   59:   45:keymap_jickel.c ****            LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \\\n   60    46:keymap_jickel.c ****            LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,TRNS, \\\n   61    47:keymap_jickel.c ****                 LALT,LGUI,          SPC,                RGUI,RALT),\n   ..\n  132   118:keymap_jickel.c ****     RSHIFT_PAREN,\n  133   119:keymap_jickel.c ****     HELLO,\n  134:  120:keymap_jickel.c ****     VOLUP,\n  135   121:keymap_jickel.c **** };\n  136   122:keymap_jickel.c **** \n  ...\n  163   149:keymap_jickel.c **** //  [14] = ACTION_MACRO_TAP(RSHIFT_PAREN),                          // Macro: RShift with tap ')'\n  164   150:keymap_jickel.c **** //  [15] = ACTION_MACRO(HELLO),                                     // Macro: say hello\n  165:  151:keymap_jickel.c **** //  [9] = ACTION_MACRO(VOLUP),                                      // Macro: media key\n  166   152:keymap_jickel.c **** };\n  167   153:keymap_jickel.c **** \n  ...\n  282   101               	.L6:\n  283   183:keymap_jickel.c ****                     MACRO_NONE );\n  284:  184:keymap_jickel.c ****         case VOLUP:\n  285   185:keymap_jickel.c ****             return (event.pressed ?\n  286:  186:keymap_jickel.c ****                     MACRO( D(VOLU), U(VOLU), END ) :\n  287   102               		.loc 1 186 0\n  288   103 0060 2223      		tst r18\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hid_liber/keymap_alaricljs.h:\n   49   KEYMAP(\\\n   50      ESC,  F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9, F10,  F11,  F12,       PSCR, SLCK, SLEP, \\\n   51:     GRV,   1,   2,   3,   4,   5,   6,   7,   8,   9,MUTE, VOLD, VOLU, BSPC,  INS, HOME, PGUP, \\\n   52      TAB,   Q,   W,   E,   R,   T,   Y,   U,   I,MSTP,MPLY, MPRV, MNXT, MSEL,  DEL,  END, PGDN, \\\n   53      FN1,   A,   S,   D,   F,   G,   H,   J,   K,   L, SCLN, QUOT,       ENT,                   \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hid_liber/keymap_custom.h:\n   52   KEYMAP(\\\n   53       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, \\\n   54:      TRNS,   P1,   P2,   P3,   P4,   P5,   P6,   P7,   P8,   P9,   P0, TRNS, TRNS, TRNS, TRNS, MSEL, VOLU, \\\n   55       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, MUTE, VOLD, \\\n   56       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS,                   \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/IIgs/keymap.c:\n  120      KEYMAP(						KC_PWR, \\\n  121  		   KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,    KC_MINS,KC_EQL, KC_BSPC, KC_FN1,   KC_PEQL, KC_PSLS, KC_MUTE, \\\n  122:            KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,    KC_LBRC,KC_RBRC,         KC_INS,   KC_P8,   KC_PGUP,   KC_VOLU, \\\n  123             KC_LCTL,KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN, KC_QUOT,KC_ENT,          KC_DEL,   KC_UP,   KC_PGDN,   KC_VOLD, \\\n  124             KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, 						 KC_LEFT,  KC_DOWN,   KC_RIGHT, \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/kmac/keymap_winkey.h:\n   12      KEYMAP(\\\n   13          FN1,      TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,SLEP, \\\n   14:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,TRNS,      TRNS,TRNS,TRNS, \\\n   15          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   16          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                      \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/kmac/keymap_winkeyless.h:\n   12      KEYMAP_WINKEYLESS(\\\n   13          FN1,      TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,SLEP, \\\n   14:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,TRNS,      TRNS,TRNS,TRNS, \\\n   15          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   16          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                      \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/macway/keymap.c:\n  113      KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL, \\\n  114             CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,BRK, UP,  INS, NLCK,\\\n  115:            LCTL,VOLD,VOLU,MUTE,NO,  NO,  PAST,PSLS,HOME,PGUP,LEFT,RGHT,ENT, \\\n  116             LSFT,NO,  NO,  NO,  NO,  NO,  PPLS,PMNS,END, PGDN,DOWN,RSFT,FN1, \\\n  117             NO,  LGUI,LALT,SPC, RALT,NO,  NO,  NO,  RCTL),\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/phantom/keymap_7bit.h:\n   21      /* 0: qwerty + a few media keys */\n   22      KEYMAP(\\\n   23:         ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, VOLD,VOLU, PSCR,SLCK,BRK,  \\\n   24          GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, FN1, FN2,  INS, HOME,PGUP, \\\n   25          TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,      DEL, END, PGDN, \\\n   ..\n   30      KEYMAP(\\\n   31          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS,TRNS,SLEP, \\\n   32:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,TRNS,TRNS, TRNS,TRNS,TRNS, \\\n   33          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   34          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,TRNS, \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/phantom/keymap_ansi.h:\n   12      KEYMAP_ANSI(\\\n   13          TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,SLEP, \\\n   14:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,TRNS,      TRNS,TRNS,TRNS, \\\n   15          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   16          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                      \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/phantom/keymap_ansi_150.h:\n   12      KEYMAP_ANSI_150(\\\n   13          TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,SLEP, \\\n   14:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,TRNS,      TRNS,TRNS,TRNS, \\\n   15          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   16          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,                      \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/phantom/keymap_iso.h:\n   12      KEYMAP_ISO(\\\n   13          TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,SLEP, \\\n   14:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,           TRNS,TRNS,TRNS, \\\n   15          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   16          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                      \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/phantom/keymap_iso_150.h:\n   12      KEYMAP_ISO_150(\\\n   13          TRNS,     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS,SLEP, \\\n   14:         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MUTE,VOLD,VOLU,           TRNS,TRNS,TRNS, \\\n   15          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT,MSEL,      TRNS,TRNS,TRNS, \\\n   16          TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                      \\\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/adb.c:\n  249  \n  250  // These are carefully coded to take 6 cycles of overhead.\n  251: // inline asm approach became too convoluted\n  252  static inline uint16_t wait_data_lo(uint16_t us)\n  253  {\n  ...\n  289      http://72.0.193.250/Documentation/macppc/adbkeycodes/\n  290      http://m0115.web.fc2.com/m0115.jpg\n  291:     [Inside Macintosh volume V, pages 191-192]\n  292      http://www.opensource.apple.com/source/IOHIDFamily/IOHIDFamily-421.18.3/IOHIDFamily/Cosmo_USB2ADB.c\n  293  ADB Signaling\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/bluefruit/bluefruit.c:\n  139  | Search          | 00000100 00000000 | 04 00 |\n  140  | Snapshot        | 00001000 00000000 | 08 00 |\n  141: | VolumeUp        | 00010000 00000000 | 10 00 |\n  142: | VolumeDown      | 00100000 00000000 | 20 00 |\n  143  | Play/Pause      | 01000000 00000000 | 40 00 |\n  144  | Fast Forward    | 10000000 00000000 | 80 00 |\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/iwrap/iWRAP4.txt:\n  154      consumer page suage\n  155      Bitfield 1:\n  156:         0x01 Volume Increment\n  157:         0x02 Volume Decrement\n  158          0x04 Mute\n  159          0x08 Play/Pause\n  ...\n  221  Copyright (c) 2003-2011 Bluegiga Technologies Inc.\n  222  Compiled on Jun 28 2011 17:19:51, running on WT12-A module, psr v31\n  223:         AVRCP BGIO FTP HFP HFP_AG HID HID_CONSUMER_PAGE HSP LEDS MAP OTA PBAP PIO=0x00fc SSP SUBRATE TEST VOLUME\n  224          - BOCK3 version 435 (Jun 28 2011 17:19:37) (max acl/sco 7/1)\n  225          - Bluetooth version 2.1, Power class 2\n  ...\n  281  Copyright (c) 2003-2010 Bluegiga Technologies Inc.\n  282  Compiled on Apr 20 2010 16:44:28, running on WT12-A module, psr v31\n  283:         AVRCP FTP PBAP PIO=0x00fc SSP SUBRATE VOLUME\n  284          - BOCK3 version 317 (Apr 20 2010 16:44:21) (max acl/sco 7/1)\n  285          - Bluetooth version 2.1, Power class 2\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/iwrap/iWRAP5.txt:\n  279  Copyright (c) 2003-2012 Bluegiga Technologies Inc.\n  280  Compiled on Oct  1 2012 10:56:21, running on WT12-A module, psr v31\n  281:         BGIO FTP HFP HFP_AG HID HID_CONSUMER_PAGE HSP MAP MDP OTA PBAP PIO=0x00fc SSP SUBRATE TEST VOLUME\n  282          - BOCK4 version 620 (Oct  1 2012 10:56:03) (max acl/sco 7/1)\n  283          - Bluetooth version 3.0, Power class 2\n  ...\n  314  Copyright (c) 2003-2012 Bluegiga Technologies Inc.\n  315  Compiled on Oct  1 2012 10:56:21, running on WT12-A module, psr v31\n  316:         BGIO FTP HFP HFP_AG HID HID_CONSUMER_PAGE HSP MAP MDP OTA PBAP PIO=0x00fc SSP SUBRATE TEST VOLUME\n  317          - BOCK4 version 620 (Oct  1 2012 10:56:03) (max acl/sco 7/1)\n  318          - Bluetooth version 3.0, Power class 2\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/lufa/LUFA-120730/LUFA/DoxygenPages/LUFAPoweredProjects.txt:\n   65   *  \\li Ghetto Drum, a MIDI drum controller: http://noisybox.net/art/gdrum/\n   66   *  \\li GPS enabled lap timer for vehicles: http://www.assembla.com/code/ironlung/subversion/nodes/trunk/LapTimer\n   67:  *  \\li Hardware Volume Control: https://github.com/davidk/hw-volume-control\n   68   *  \\li Hiduino, a USB-MIDI replacement firmware for the Arduino Uno: http://code.google.com/p/hiduino/\n   69   *  \\li Ikea RGB LED USB modification: http://slashhome.se/p/projects/id/ikea_dioder_usb/#project\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/AudioClassCommon.h:\n  110  \n  111  		/** Supported feature mask for an Audio class feature unit descriptor. See the Audio class specification for more details. */\n  112: 		#define AUDIO_FEATURE_VOLUME               (1 << 1)\n  113  \n  114  		/** Supported feature mask for an Audio class feature unit descriptor. See the Audio class specification for more details. */\n  ...\n  475  		 *\n  476  		 *  Type define for an Audio class-specific Feature Unit descriptor. This indicates to the host what features\n  477: 		 *  are present in the device's audio stream for basic control, such as per-channel volume. See the USB Audio\n  478  		 *  specification for more details.\n  479  		 *\n  ...\n  501  		 *\n  502  		 *  Type define for an Audio class-specific Feature Unit descriptor. This indicates to the host what features\n  503: 		 *  are present in the device's audio stream for basic control, such as per-channel volume. See the USB Audio\n  504  		 *  specification for more details.\n  505  		 *\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDClassCommon.h:\n  236  		#define HID_KEYBOARD_SC_FIND                              0x7E\n  237  		#define HID_KEYBOARD_SC_MUTE                              0x7F\n  238: 		#define HID_KEYBOARD_SC_VOLUME_UP                         0x80\n  239: 		#define HID_KEYBOARD_SC_VOLUME_DOWN                       0x81\n  240  		#define HID_KEYBOARD_SC_LOCKING_CAPS_LOCK                 0x82\n  241  		#define HID_KEYBOARD_SC_LOCKING_NUM_LOCK                  0x83\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/MassStorageClassCommon.h:\n  160  \n  161  		/** SCSI Sense Code to indicate an attempt to write past the end of a partition has been made. */\n  162: 		#define SCSI_SENSE_KEY_VOLUME_OVERFLOW                 0x0D\n  163  \n  164  		/** SCSI Sense Code to indicate that the source data did not match the data read from the medium. */\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/usb_hid/USB_Host_Shield_2.0/gpl2.txt:\n  128  \n  129  In addition, mere aggregation of another work not based on the Program\n  130: with the Program (or with a work based on the Program) on a volume of\n  131  a storage or distribution medium does not bring the other work under\n  132  the scope of this License.\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/usb_hid/USB_Host_Shield_2.0/hidescriptorparser.cpp:\n  567  const char *ReportDescParserBase::consTitles7[]	PROGMEM	= \n  568  {\n  569: 	pstrUsageVolume						,\n  570  	pstrUsageBalance					,	\n  571  	pstrUsageMute						,\n  ...\n  576  	pstrUsageLoudness					,\n  577  	pstrUsageMPX						,	\n  578: 	pstrUsageVolumeIncrement			,	\n  579: 	pstrUsageVolumeDecrement				\n  580  };\n  581  const char *ReportDescParserBase::consTitles8[]	PROGMEM	= \n  ...\n  997  	pstrUsageCine						,\n  998  	pstrUsageTransmitPower				,\n  999: 	pstrUsageVolume						,\n 1000  	pstrUsageFocus						,\n 1001  	pstrUsageDepth						\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/usb_hid/USB_Host_Shield_2.0/hidusagestr.h:\n  515  const char pstrUsagePlayPause					[] PROGMEM = \"Play/Pause\"; \n  516  const char pstrUsagePlaySkip					[] PROGMEM = \"Play/Skip\"; \n  517: const char pstrUsageVolume						[] PROGMEM = \"Vol\"; \n  518  const char pstrUsageBalance						[] PROGMEM = \"Balance\"; \n  519  //const char pstrUsageMute						[] PROGMEM = \"Mute\"; \n  ...\n  524  const char pstrUsageLoudness					[] PROGMEM = \"Loud\"; \n  525  const char pstrUsageMPX							[] PROGMEM = \"MPX\"; \n  526: const char pstrUsageVolumeIncrement				[] PROGMEM = \"Vol Inc\"; \n  527: const char pstrUsageVolumeDecrement				[] PROGMEM = \"Vol Dec\"; \n  528  const char pstrUsageSpeedSelect					[] PROGMEM = \"Speed\"; \n  529  const char pstrUsagePlaybackSpeed				[] PROGMEM = \"Play Speed\"; \n  ...\n  904  const char pstrUsageCine						[] PROGMEM = \"Cine\"; \n  905  const char pstrUsageTransmitPower				[] PROGMEM = \"Trans Pwr\"; \n  906: //const char pstrUsageVolume						[] PROGMEM = \"Vol\"; \n  907  const char pstrUsageFocus						[] PROGMEM = \"Focus\"; \n  908  const char pstrUsageDepth						[] PROGMEM = \"Depth\"; \n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/usb_hid/USB_Host_Shield_2.0/hidusagetitlearrays.cpp:\n  587  //const char *consTitles7[]	PROGMEM	= \n  588  //{\n  589: //	pstrUsageVolume						,\n  590  //	pstrUsageBalance					,	\n  591  //	pstrUsageMute						,\n  ...\n  596  //	pstrUsageLoudness					,\n  597  //	pstrUsageMPX						,	\n  598: //	pstrUsageVolumeIncrement			,	\n  599: //	pstrUsageVolumeDecrement				\n  600  //};\n  601  //const char *consTitles8[]	PROGMEM	= \n  ...\n 1017  //	pstrUsageCine						,\n 1018  //	pstrUsageTransmitPower				,\n 1019: //	pstrUsageVolume						,\n 1020  //	pstrUsageFocus						,\n 1021  //	pstrUsageDepth						\n\n/Users/Jickel/Documents/Arduino/tmk_keyboard/protocol/vusb/usbdrv/License.txt:\n  149  \n  150  In addition, mere aggregation of another work not based on the Program\n  151: with the Program (or with a work based on the Program) on a volume of\n  152  a storage or distribution medium does not bring the other work under\n  153  the scope of this License.\n\n106 matches across 52 files\n",
+			"settings":
+			{
+				"buffer_size": 35078,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "keyboard/hbkb/keymap.c",
+			"settings":
+			{
+				"buffer_size": 11636,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "doc/keycode.txt",
+			"settings":
+			{
+				"buffer_size": 12143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "keyboard/hhkb/keymap_common.c",
+			"settings":
+			{
+				"buffer_size": 1091,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "converter/ibm4704_usb/keymap_common.h",
+			"settings":
+			{
+				"buffer_size": 3233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "keyboard/hhkb/Makefile",
+			"settings":
+			{
+				"buffer_size": 4584,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "keyboard/hhkb/config.h",
+			"settings":
+			{
+				"buffer_size": 1732,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"python",
+				"Python: Get documentation"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 660.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/converter/ps2_usb/keymap_jis.c",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/keymap_jickel.c",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/action.h",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/action.c",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/action_tapping.c",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/action_code.h",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/keycode.h",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/keymap.c",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/common/keyboard.c",
+		"/Users/Jickel/Documents/Arduino/tmk_keyboard/keyboard/hhkb/hhkb_lufa.lss",
+		"/Users/Jickel/Documents/Web/spelaindie/assets/style/bootstrap-2.3.2/scaffolding.less",
+		"/Users/Jickel/Documents/Web/spelaindie/assets/style/bootstrap-2.3.2/accordion.less",
+		"/Users/Jickel/Documents/Web/spelaindie/plugins/twitter/f40a4fb14aebff883626bc6d6c4a059f.json",
+		"/Users/Jickel/Documents/Web/spelaindie/assets/js/plugins/jquery.fixedonlater.min.js",
+		"/Users/Jickel/Documents/Web/spelaindie/index.html",
+		"/Users/Jickel/Library/Application Support/KeyRemap4MacBook/private.xml",
+		"/Users/Jickel/Documents/Unity/BinoTest/BinoTest.sublime-project",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/interfaces.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/search.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/views/permissions.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/user.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/security_mixin.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/fanstatic.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/views/base.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/form.pt",
+		"/Users/Jickel/Documents/Web/Fika/MANIFEST.in",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/module_segment.py",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/moduleobject.h",
+		"/Users/Jickel/Documents/Web/Fika/setup.cfg",
+		"/Users/Jickel/Documents/Web/Fika/fika/schemas/__init__.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/schemas/course.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/course.pt",
+		"/Users/Jickel/Documents/Web/Fika/buildout.cfg",
+		"/Users/Jickel/Dropbox/Public/webServer/Less-Låda 2/panels.less",
+		"/Users/Jickel/Documents/Web/Fika/.pydevproject.bak",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/course_module.pt",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/course_module.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/course_modules.pt",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/home.pt",
+		"/Users/Jickel/Documents/Web/Fika/fika/schemas/module_segment.py",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/sliceobject.h",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/course.py",
+		"/Users/Jickel/Documents/Web/Fika/bootstrap.py",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/opcode.h",
+		"/Users/Jickel/Documents/Web/Fika/Data.fs.lock",
+		"/Users/Jickel/Documents/Web/Fika/development.ini",
+		"/Users/Jickel/Documents/Web/Fika/Data.fs",
+		"/Users/Jickel/Documents/Web/Fika/fika/views/users.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/views/auth.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/user.pt",
+		"/Users/Jickel/Documents/Web/Fika/fika/schemas/course_module.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/views/courses.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/courses.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/__init__.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/master.pt",
+		"/Users/Jickel/Documents/Unity/BinoTest/Assets/Scripts/OculusCamBehavior.cs",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/enumobject.h",
+		"/Users/Jickel/Documents/Web/Fika/Data.fs.tmp",
+		"/Users/Jickel/Documents/Web/Fika/fika/schemas/user.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/users.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/templates/courses.pt",
+		"/Users/Jickel/Documents/Web/Fika/fika/schemas/common.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/site.py",
+		"/Users/Jickel/Downloads/feedcreator-1.7.2-ppt/demo.php",
+		"/Users/Jickel/Downloads/feedcreator-1.7.2-ppt/official_demo.php",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/cellobject.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/cobject.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/object.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/import.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/modsupport.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/node.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/abstract.h",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.bootstrap-3.0.2-py2.7.egg/js/bootstrap/__init__.py",
+		"/Users/Jickel/Documents/Web/Fika.sublime-project",
+		"/Users/Jickel/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.tinymce-4.0.2-py2.7.egg/js/tinymce/resources/tinymce.js",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/listobject.h",
+		"/Users/Jickel/Documents/Web/Fika/include/python2.7/longintrepr.h",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZODB-4.0.0-py2.7.egg/ZODB/loglevels.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZODB-4.0.0-py2.7.egg/ZODB/tests/loggingsupport.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.tinymce-3.5.2_1-py2.7.egg/js/tinymce/resources/plugins/layer/editor_plugin_src.js",
+		"/Users/Jickel/Documents/Web/Fika/eggs/Chameleon-2.14-py2.7.egg/chameleon/tests/inputs/053-special-characters-in-attributes.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/deform_bootstrap-0.2.9-py2.7.egg/deform_bootstrap/templates/chosen_optgroup.pt",
+		"/Users/Jickel/Documents/Web/Fika/CHANGES.txt",
+		"/Users/Jickel/Documents/Web/Fika/fika/views/course.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZEO-4.0.0-py2.7.egg/ZEO/tests/registerDB.test",
+		"/Users/Jickel/Documents/Web/Fika/eggs/fanstatic-0.16-py2.7.egg/fanstatic/registry.py",
+		"/Users/Jickel/Documents/Web/Fika/lib/python2.7/encodings/raw_unicode_escape.py",
+		"/Users/Jickel/Documents/Web/Fika/README.txt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/deform-0.9.5-py2.7.egg/deform/form.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.bootstrap-3.0.2-py2.7.egg/js/bootstrap/resources/css/bootstrap.css",
+		"/Users/Jickel/Documents/Web/Fika/lib/python2.7/encodings/utf_8_sig.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.tinymce-4.0.2-py2.7.egg/js/tinymce/resources/classes/ui/Widget.js",
+		"/Users/Jickel/Documents/Web/Fika/eggs/Chameleon-2.14-py2.7.egg/chameleon/tests/inputs/061-fill-one-slot-but-two-defined.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/Chameleon-2.14-py2.7.egg/chameleon/tests/inputs/031-namespace-with-tal.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/Chameleon-2.14-py2.7.egg/chameleon/tests/inputs/hello_world.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/deform-0.9.5-py2.7.egg/deform/templates/autocomplete_input.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZODB-4.0.0-py2.7.egg/ZODB/tests/MinPO.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.tinymce-4.0.2-py2.7.egg/js/tinymce/resources/classes/LegacyInput.js",
+		"/Users/Jickel/Documents/Web/Fika/eggs/Chameleon-2.14-py2.7.egg/chameleon/tests/inputs/059-embedded-javascript.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZODB-4.0.0-py2.7.egg/ZODB/BaseStorage.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/pytz-2013.9-py2.7.egg/pytz/zoneinfo/America/Buenos_Aires",
+		"/Users/Jickel/Documents/Web/Fika/fika/models/course_modules.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/mock-1.0.1-py2.7.egg/mock.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/pyramid-1.4.5-py2.7.egg/pyramid/renderers.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/js.tinymce-4.0.2-py2.7.egg/js/tinymce/resources/skins/default/TinyMCE.less",
+		"/Users/Jickel/Documents/Web/Fika/eggs/deform_bootstrap-0.2.9-py2.7.egg/deform_bootstrap/templates/typeahead_input.pt",
+		"/Users/Jickel/Documents/Web/Fika/eggs/BTrees-4.0.8-py2.7-macosx-10.9-intel.egg/BTrees/tests/test_IFBTree.py",
+		"/Users/Jickel/Documents/Web/Fika/bin/test",
+		"/Users/Jickel/Documents/Web/Fika/eggs/pyramid_debugtoolbar-1.0.9-py2.7.egg/pyramid_debugtoolbar/views.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/pyramid-1.4.5-py2.7.egg/pyramid/view.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/coverage-3.7.1-py2.7-macosx-10.9-intel.egg/coverage/version.py",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZEO-4.0.0-py2.7.egg/ZEO/tests/zeo-fan-out.test",
+		"/Users/Jickel/Documents/Web/Fika/bin/fsdump",
+		"/Users/Jickel/Documents/Web/Fika/production.ini",
+		"/Users/Jickel/Documents/Web/Fika/bin/py",
+		"/Users/Jickel/Documents/Web/Fika/.Python",
+		"/Users/Jickel/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Jickel/Documents/Web/Fika/eggs/pyramid-1.4.5-py2.7.egg/pyramid/testing.py",
+		"/Users/Jickel/Documents/Web/Fika/fika/static/main.css",
+		"/Users/Jickel/Documents/Web/Fika/fika.egg-info/requires.txt",
+		"/Users/Jickel/Documents/Web/Fika/fika.egg-info/PKG-INFO",
+		"/Users/Jickel/Documents/Web/Fika/fika.egg-info/not-zip-safe",
+		"/Users/Jickel/Documents/Web/Fika/fika.egg-info/entry_points.txt",
+		"/Users/Jickel/Documents/Web/Fika/fika.egg-info/dependency_links.txt",
+		"/Users/Jickel/Documents/Web/Fika/develop-eggs/fika.egg-link",
+		"/Users/Jickel/Documents/Web/Fika/eggs/ZODB-4.0.0-py2.7.egg/ZODB/fsIndex.py",
+		"/Users/Jickel/Dropbox/Public/webServer/braheskolan/braheskolan_template/templates/braheskolan/html/natstrunt.html"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";;;;'''''''''';;;'''fff",
+			"left",
+			"par",
+			"volu",
+			"par",
+			"media_play",
+			"trns",
+			"MwD",
+			"kc_slash",
+			"fn4",
+			"/",
+			"host",
+			"tap_toggle",
+			"lshift_",
+			"slash",
+			"/*",
+			"PORTF",
+			"DDRF",
+			"key_init",
+			"php",
+			"keymap",
+			"\n			",
+			"myTransform",
+			"Cameras",
+			"origcolo",
+			"Mathf",
+			"_origColor",
+			"zoom",
+			"Zoom",
+			"zoom",
+			"webcamtext",
+			"iswatching",
+			"iswatcing",
+			"not",
+			"setfov",
+			"_origzoom",
+			"camera",
+			"cameras",
+			"position",
+			"zoomin",
+			"chromegadget",
+			"            	",
+			"icourses",
+			"module_used_in",
+			"get_user_by_email",
+			"from",
+			"change_password",
+			"change_password'",
+			"view.profile",
+			"css",
+			"context",
+			"course.pt",
+			"bootstrap",
+			"pypy",
+			"bootstrap",
+			"auth.py",
+			"auth py",
+			"ICourseModules",
+			"CourseModuleSchema",
+			"derp",
+			"content_factory",
+			"textsegment",
+			"content_factory",
+			"ICourses",
+			"view_config",
+			"course.pt",
+			"pt",
+			"time",
+			"t",
+			"time",
+			"Time",
+			" f",
+			"screen",
+			"imodulesegment",
+			"def leave",
+			"course",
+			"courses",
+			"you are doing this course",
+			"you are doing this ourse",
+			"delete",
+			"leave",
+			"title",
+			"self,",
+			"structure",
+			"metal",
+			"render",
+			"bootstrap_css",
+			"bootstrap.css",
+			"users",
+			"renderer",
+			"render",
+			"auto_need",
+			"post",
+			"config.add_route",
+			"__name",
+			"give_root",
+			"zope",
+			"setup.cfg",
+			"DummyView",
+			"site.py",
+			"main_css",
+			"fluid",
+			"page-we",
+			"fade",
+			".js",
+			"grid-columns",
+			"background-size",
+			"bootstrap",
+			"print",
+			"span",
+			"mixin",
+			"span",
+			"page-footer",
+			"bootstrap.css",
+			"bootstrap.less",
+			"less/page-welcome",
+			"bootstrap.less",
+			"page-welcome",
+			"Ta kontak",
+			"span",
+			"col",
+			"span",
+			"col",
+			"content",
+			"bootstrap",
+			"fluid",
+			"bootstrap-2.3",
+			"span"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"PORTD",
+			"DDRD",
+			"ICourses",
+			"):\n",
+			"../../../js",
+			"templates/treble/html",
+			"",
+			"./",
+			"../less/",
+			"templates",
+			"templats/treble/assets",
+			"../assets",
+			"js",
+			"../../../../assets",
+			"js",
+			"../../../assets"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "keyboard/hhkb/matrix.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1503,
+								1503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "keyboard/hhkb/keymap_hasu.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11560,
+								11547
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2115.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "keyboard/hhkb/keymap_jickel.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3059,
+								3059
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 35078,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										259,
+										263
+									],
+									[
+										607,
+										611
+									],
+									[
+										774,
+										778
+									],
+									[
+										1044,
+										1048
+									],
+									[
+										1542,
+										1546
+									],
+									[
+										1969,
+										1973
+									],
+									[
+										2472,
+										2476
+									],
+									[
+										3015,
+										3019
+									],
+									[
+										3545,
+										3549
+									],
+									[
+										4025,
+										4029
+									],
+									[
+										4633,
+										4637
+									],
+									[
+										4644,
+										4648
+									],
+									[
+										5175,
+										5179
+									],
+									[
+										5605,
+										5609
+									],
+									[
+										6094,
+										6098
+									],
+									[
+										6572,
+										6576
+									],
+									[
+										7002,
+										7006
+									],
+									[
+										7327,
+										7331
+									],
+									[
+										7894,
+										7898
+									],
+									[
+										8249,
+										8253
+									],
+									[
+										8649,
+										8653
+									],
+									[
+										8693,
+										8697
+									],
+									[
+										8758,
+										8762
+									],
+									[
+										9017,
+										9021
+									],
+									[
+										9379,
+										9383
+									],
+									[
+										9732,
+										9736
+									],
+									[
+										9759,
+										9763
+									],
+									[
+										10195,
+										10199
+									],
+									[
+										10719,
+										10723
+									],
+									[
+										11259,
+										11263
+									],
+									[
+										11723,
+										11727
+									],
+									[
+										12191,
+										12195
+									],
+									[
+										12585,
+										12589
+									],
+									[
+										12976,
+										12980
+									],
+									[
+										13376,
+										13380
+									],
+									[
+										13802,
+										13806
+									],
+									[
+										14258,
+										14262
+									],
+									[
+										14344,
+										14348
+									],
+									[
+										14353,
+										14357
+									],
+									[
+										14622,
+										14626
+									],
+									[
+										14631,
+										14635
+									],
+									[
+										14990,
+										14994
+									],
+									[
+										15268,
+										15272
+									],
+									[
+										15503,
+										15507
+									],
+									[
+										15726,
+										15730
+									],
+									[
+										15812,
+										15816
+									],
+									[
+										15821,
+										15825
+									],
+									[
+										16187,
+										16191
+									],
+									[
+										16720,
+										16724
+									],
+									[
+										16998,
+										17002
+									],
+									[
+										17259,
+										17263
+									],
+									[
+										17495,
+										17499
+									],
+									[
+										17581,
+										17585
+									],
+									[
+										17590,
+										17594
+									],
+									[
+										17959,
+										17963
+									],
+									[
+										18586,
+										18590
+									],
+									[
+										18994,
+										18998
+									],
+									[
+										19385,
+										19389
+									],
+									[
+										19671,
+										19675
+									],
+									[
+										19809,
+										19813
+									],
+									[
+										19818,
+										19822
+									],
+									[
+										20189,
+										20193
+									],
+									[
+										20752,
+										20756
+									],
+									[
+										21426,
+										21430
+									],
+									[
+										22035,
+										22039
+									],
+									[
+										22583,
+										22587
+									],
+									[
+										23115,
+										23119
+									],
+									[
+										23551,
+										23555
+									],
+									[
+										24003,
+										24007
+									],
+									[
+										24542,
+										24546
+									],
+									[
+										25089,
+										25093
+									],
+									[
+										25626,
+										25630
+									],
+									[
+										26171,
+										26175
+									],
+									[
+										26603,
+										26607
+									],
+									[
+										26822,
+										26826
+									],
+									[
+										27176,
+										27180
+									],
+									[
+										27231,
+										27235
+									],
+									[
+										27534,
+										27538
+									],
+									[
+										27571,
+										27575
+									],
+									[
+										27896,
+										27900
+									],
+									[
+										28225,
+										28229
+									],
+									[
+										28674,
+										28678
+									],
+									[
+										29056,
+										29060
+									],
+									[
+										29536,
+										29540
+									],
+									[
+										29581,
+										29585
+									],
+									[
+										30108,
+										30112
+									],
+									[
+										30511,
+										30515
+									],
+									[
+										30824,
+										30828
+									],
+									[
+										31204,
+										31208
+									],
+									[
+										31276,
+										31280
+									],
+									[
+										31734,
+										31738
+									],
+									[
+										32135,
+										32139
+									],
+									[
+										32454,
+										32458
+									],
+									[
+										32613,
+										32617
+									],
+									[
+										32651,
+										32655
+									],
+									[
+										32835,
+										32839
+									],
+									[
+										33169,
+										33173
+									],
+									[
+										33481,
+										33485
+									],
+									[
+										33552,
+										33556
+									],
+									[
+										33899,
+										33903
+									],
+									[
+										34238,
+										34242
+									],
+									[
+										34407,
+										34411
+									],
+									[
+										34447,
+										34451
+									],
+									[
+										34619,
+										34623
+									],
+									[
+										34929,
+										34933
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								8511,
+								8511
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1847.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "keyboard/hbkb/keymap.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 11636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2723.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "doc/keycode.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2333,
+								2333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "keyboard/hhkb/keymap_common.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								762,
+								762
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "converter/ibm4704_usb/keymap_common.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								826
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 440.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "keyboard/hhkb/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1877,
+								1877
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 277.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "keyboard/hhkb/config.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								411
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "tmk.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"keymapji",
+				"keyboard/hhkb/keymap_jickel.c"
+			],
+			[
+				"actio",
+				"common/action.h"
+			],
+			[
+				"action",
+				"common/action.c"
+			],
+			[
+				"keymapcommon",
+				"converter/ibm4704_usb/keymap_common.h"
+			],
+			[
+				"aavsn",
+				"Avsnitt/Avsnitt01.html"
+			],
+			[
+				"in",
+				"index.html"
+			],
+			[
+				"rss",
+				"rss.xml"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"maset",
+				"fika/templates/master.pt"
+			],
+			[
+				"base.",
+				"fika/views/base.py"
+			],
+			[
+				"form",
+				"fika/templates/form.pt"
+			],
+			[
+				"base",
+				"fika/views/base.py"
+			],
+			[
+				"schema",
+				"fika/schemas/__init__.py"
+			],
+			[
+				"cours",
+				"fika/templates/course.pt"
+			],
+			[
+				"buildou",
+				"buildout.cfg"
+			],
+			[
+				"inter",
+				"fika/models/interfaces.py"
+			],
+			[
+				"courses",
+				"fika/models/courses.py"
+			],
+			[
+				"courses.p",
+				"fika/models/courses.py"
+			],
+			[
+				"courses.pt",
+				"fika/templates/courses.pt"
+			],
+			[
+				"user.p",
+				"fika/schemas/user.py"
+			],
+			[
+				"course",
+				"fika/models/course.py"
+			],
+			[
+				"interf",
+				"fika/models/interfaces.py"
+			],
+			[
+				"common",
+				"fika/schemas/common.py"
+			],
+			[
+				"",
+				"bootstrap.py"
+			],
+			[
+				"form.",
+				"fika/templates/form.pt"
+			],
+			[
+				"bootstrap",
+				"bootstrap.py"
+			],
+			[
+				"users",
+				"fika/models/users.py"
+			],
+			[
+				"inputwidget",
+				"eggs/js.tinymce-4.0.2-py2.7.egg/js/tinymce/resources/classes/ui/Widget.js"
+			],
+			[
+				"modulesegment",
+				"fika/models/module_segment.py"
+			],
+			[
+				"tinymce",
+				"eggs/js.tinymce-4.0.2-py2.7.egg/js/tinymce/resources/tinymce.js"
+			],
+			[
+				"fans",
+				"fika/fanstatic.py"
+			],
+			[
+				"views",
+				"eggs/pyramid_debugtoolbar-1.0.9-py2.7.egg/pyramid_debugtoolbar/views.py"
+			],
+			[
+				"bootstrap.c",
+				"templates/treble/assets/style/bootstrap.css"
+			],
+			[
+				"applica",
+				"js/application/application.min.js"
+			],
+			[
+				"styles.less",
+				"templates/treble/assets/style/bootstrap-2.3.2/variables.less"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"page-",
+				"templates/treble/less/page-header.less"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

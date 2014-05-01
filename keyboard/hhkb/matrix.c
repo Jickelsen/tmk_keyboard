@@ -73,48 +73,97 @@ static matrix_row_t _matrix1[MATRIX_ROWS];
 #define KEY_POWER_ON()
 #define KEY_POWER_OFF()
 
+
 #elif defined(__AVR_ATmega32U4__)
-// Ports for my designed Alt Controller PCB
+// Ports for Pro Micro
 // row:     PB0-2
 // col:     PB3-5,6
-// key:     PD7(pull-uped)
-// prev:    PB7
-// power:   PD4(L:off/H:on)
+// key:     PD0(pull-uped)
+// prev:    PD1
 #define KEY_INIT()              do {    \
-    DDRB  = 0xFF;                       \
-    PORTB = 0x00;                       \
-    DDRD  &= ~0x80;                     \
-    PORTD |= 0x80;                      \
-    /* keyswitch board power on */      \
-    DDRD  |=  (1<<4);                   \
-    PORTD |=  (1<<4);                   \
-    KEY_UNABLE();                       \
-    KEY_PREV_OFF();                     \
+    DDRB |= 0x7F;                       \
+    DDRD |=  (1<<1);                    \
+    DDRD &= ~(1<<0);                    \
+    PORTD |= (1<<0);                    \
 } while (0)
 #define KEY_SELECT(ROW, COL)    (PORTB = (PORTB & 0xC0) |       \
-                                         (((COL) & 0x07)<<3) |  \
+                                         (((COL) & 0x07)<<3) |    \
                                          ((ROW) & 0x07))
 #define KEY_ENABLE()            (PORTB &= ~(1<<6))
 #define KEY_UNABLE()            (PORTB |=  (1<<6))
-#define KEY_STATE()             (PIND & (1<<7))
-#define KEY_PREV_ON()           (PORTB |=  (1<<7))
-#define KEY_PREV_OFF()          (PORTB &= ~(1<<7))
+#define KEY_STATE()             (PIND & (1<<0))
+#define KEY_PREV_ON()           (PORTD |=  (1<<1))
+#define KEY_PREV_OFF()          (PORTD &= ~(1<<1))
 #define KEY_POWER_ON()
 #define KEY_POWER_OFF()
-/*
-#define KEY_POWER_ON()          do {    \
-    KEY_INIT();                         \
-    PORTD |=  (1<<4);                   \
-    _delay_ms(1);                       \
-} while (0)
-#define KEY_POWER_OFF()         do {    \
-    PORTD &= ~(1<<4);                   \
-    DDRB  &= ~0xFF;                     \
-    PORTB &= ~0xFF;                     \
-    DDRB  &= ~0x80;                     \
-    PORTB &= ~0x80;                     \
-} while (0)
-*/
+
+
+// #elif defined(__AVR_ATmega32U4__)
+// // Ports for Teensy 2.0
+// // row:     PB0-2
+// // col:     PB3-5,6
+// // key:     PF0(pull-uped)
+// // prev:    PF1
+// #define KEY_INIT()              do {    \
+//     DDRB |= 0x7F;                       \
+//     DDRF |=  (1<<1);                    \
+//     DDRF &= ~(1<<0);                    \
+//     PORTF |= (1<<0);                    \
+// } while (0)
+// #define KEY_SELECT(ROW, COL)    (PORTB = (PORTB & 0xC0) |       \
+//                                          (((COL) & 0x07)<<3) |    \
+//                                          ((ROW) & 0x07))
+// #define KEY_ENABLE()            (PORTB &= ~(1<<6))
+// #define KEY_UNABLE()            (PORTB |=  (1<<6))
+// #define KEY_STATE()             (PINF & (1<<0))
+// #define KEY_PREV_ON()           (PORTF |=  (1<<1))
+// #define KEY_PREV_OFF()          (PORTF &= ~(1<<1))
+// #define KEY_POWER_ON()
+// #define KEY_POWER_OFF()
+
+
+// #elif defined(__AVR_ATmega32U4__)
+// // Ports for my designed Alt Controller PCB
+// // row:     PB0-2
+// // col:     PB3-5,6
+// // key:     PD7(pull-uped)
+// // prev:    PB7
+// // power:   PD4(L:off/H:on)
+// #define KEY_INIT()              do {    \
+//     DDRB  = 0xFF;                       \
+//     PORTB = 0x00;                       \
+//     DDRD  &= ~0x80;                     \
+//     PORTD |= 0x80;                      \
+//     /* keyswitch board power on */      \
+//     DDRD  |=  (1<<4);                   \
+//     PORTD |=  (1<<4);                   \
+//     KEY_UNABLE();                       \
+//     KEY_PREV_OFF();                     \
+// } while (0)
+// #define KEY_SELECT(ROW, COL)    (PORTB = (PORTB & 0xC0) |       \
+//                                          (((COL) & 0x07)<<3) |  \
+//                                          ((ROW) & 0x07))
+// #define KEY_ENABLE()            (PORTB &= ~(1<<6))
+// #define KEY_UNABLE()            (PORTB |=  (1<<6))
+// #define KEY_STATE()             (PIND & (1<<7))
+// #define KEY_PREV_ON()           (PORTB |=  (1<<7))
+// #define KEY_PREV_OFF()          (PORTB &= ~(1<<7))
+// #define KEY_POWER_ON()
+// #define KEY_POWER_OFF()
+// /*
+// #define KEY_POWER_ON()          do {    \
+//     KEY_INIT();                         \
+//     PORTD |=  (1<<4);                   \
+//     _delay_ms(1);                       \
+// } while (0)
+// #define KEY_POWER_OFF()         do {    \
+//     PORTD &= ~(1<<4);                   \
+//     DDRB  &= ~0xFF;                     \
+//     PORTB &= ~0xFF;                     \
+//     DDRB  &= ~0x80;                     \
+//     PORTB &= ~0x80;                     \
+// } while (0)
+// */
 
 
 #elif defined(__AVR_ATmega328P__)
