@@ -14,7 +14,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * |-----------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
-     * |Fn10  |  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn3|Fn2|Enter   |
+     * |Fn10  |  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn2|Fn3|Enter   |
      * |-----------------------------------------------------------|
      * |Shift  |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|/  |Shift  |Fn1|
      * `-----------------------------------------------------------'
@@ -23,7 +23,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
-           FN10,A,   S,   D,  F,   G,   H,   J,   K,   L,  FN3, FN2,ENT, \
+           FN10,A,   S,   D,  F,   G,   H,   J,   K,   L,  FN2, FN3,ENT, \
             LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH, RSFT ,FN1, \
                 LALT,LGUI,          SPC,                FN8 ,RALT),
 
@@ -52,7 +52,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * |-----------------------------------------------------------|
      * |Tab  |Hom|PgD|Up |PgU|End|Hom|PgU|   lEnd|   |   |   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|   |Lef|PgD|   |   |Lef|Dow|Up |Rig|   |Fn0|Return  |
+     * |Contro|   |Lef|PgD|   |   |Lef|Dow|Up |Rig|Fn0|   |Return  |
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |   |Hom|PgD|PgUlEnd|   |Shift |   |
      * `-----------------------------------------------------------'
@@ -61,7 +61,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB, HOME,PGDN,UP,  PGUP,END, HOME,PGUP,NO,END, NO,  NO,  NO,  BSPC, \
-           LCTL,NO,  LEFT,PGDN, NO, NO,  LEFT,DOWN,UP,  RGHT, NO, TRNS,  ENT, \
+           LCTL,NO,  LEFT,PGDN, NO, NO,  LEFT,DOWN,UP,  RGHT, TRNS, NO,  ENT, \
            LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, NO,RSFT,NO, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
@@ -90,7 +90,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * |-----------------------------------------------------------|
      * |Tab  |   |   |   |   |   |MwL|MwU|   |MwR|   |   |   |Backs|
      * |-----------------------------------------------------------|
-     * |Contro|   |   |MwD|   |   |McL|McD|McU|McR|Fn0|   |Return  |
+     * |Contro|   |   |MwD|   |   |McL|McD|McU|McR|   |Fn0|Return  |
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
      * `-----------------------------------------------------------'
@@ -100,7 +100,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_U, NO,WH_R,NO,  NO,  NO,  BSPC, \
-           LCTL,NO,  ACL0,WH_D,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,TRNS,QUOT,ENT, \
+           LCTL,NO,  ACL0,WH_D,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,NO,TRNS,ENT, \
            LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,NO, \
                 LALT,LGUI,          BTN1,               RALT,TRNS),
 };
@@ -131,8 +131,8 @@ static const uint16_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_DEFAULT_LAYER_SET(0),                              // Default layer(not used)
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                               // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_LAYER_TAP_KEY(2, KC_QUOT),                        // Cursor layer with quote*
-    [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),                         // Mousekey layer with Semicolon*
+    [2] = ACTION_LAYER_TAP_KEY(2, KC_SCLN),                        // Cursor layer with Semicolon*
+    [3] = ACTION_LAYER_TAP_KEY(3, KC_QUOT),                         // Mousekey layer with quote*
 //    [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),                    // RControl with tap Enter*
 //    [5] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),                       // Function: LShift with tap '('
     // [6] = ACTION_LAYER_TAP_KEY(5, KC_SPC),                          // Mousekey layer with Space
