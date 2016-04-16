@@ -12,7 +12,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * ,-----------------------------------------------------------.
      * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|
      * |-----------------------------------------------------------|
-     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
+     * |Tab  |Fn8|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
      * |Fn10  |  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn2|Fn3|Enter   |
      * |-----------------------------------------------------------|
@@ -22,8 +22,8 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      *       `-------------------------------------------'
      */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
-           TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
-           FN10,A,   S,   D,  F,   G,   H,   J,   K,   L,  FN2, FN3,ENT, \
+           TAB, FN8,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
+           FN10, A,   S,   D,  F,   G,   H,   J,   K,   L,  FN2, FN3,ENT, \
             LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH, RSFT ,FN1, \
                 LALT,LGUI,          SPC,                FN8 ,RALT),
 
@@ -137,7 +137,8 @@ static const uint16_t fn_actions[] PROGMEM = {
 //    [5] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),                       // Function: LShift with tap '('
     // [6] = ACTION_LAYER_TAP_KEY(5, KC_SPC),                          // Mousekey layer with Space
     [7] = ACTION_LAYER_TOGGLE(3),                                   // Mousekey layer(toggle)
-    [8] = ACTION_MODS(MOD_LALT | MOD_LSFT | MOD_LCTL | MOD_LGUI),   // Hyper
+    /* [8] = ACTION_MODS(MOD_LALT | MOD_LSFT | MOD_LCTL | MOD_LGUI),   // Hyper */
+    [8] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LSFT | MOD_LCTL | MOD_LGUI, KC_Q),   // Hyper
 //    [9] = ACTION_FUNCTION_TAP(RSHIFT_RPAREN),                       // Function: RShift with tap ')'
     [10] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),                   // LControl with tap Esc
 

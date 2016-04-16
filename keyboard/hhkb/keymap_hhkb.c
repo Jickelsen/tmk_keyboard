@@ -1,4 +1,4 @@
-/* 
+* 
  * HHKB Layout
  */
 #include "keymap_common.h"
